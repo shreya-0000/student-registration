@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <p class="eyebrow">EXPRESS.JS MINI PROJECT</p>
+      <h1>Student Management System</h1>
+      <p class="subtitle">Add, search, update, and manage student records.</p>
+    </header>
+
+    <section class="panel">
+      <h2 id="form-title">Add a student</h2>
+      <form id="student-form">
+        <input type="hidden" id="student-id">
+        <div class="form-grid">
+          <label>
+            Full name
+            <input id="name" name="name" placeholder="e.g. Shreya Babde" required>
+          </label>
+          <label>
+            Email
+            <input id="email" name="email" type="email" placeholder="student@example.com" required>
+          </label>
+          <label class="full-width">
+            Course / Branch
+            <input id="course" name="course" placeholder="e.g. Software Engineering" required>
+          </label>
+        </div>
+        <div class="actions">
+          <button type="submit" id="submit-button">Add student</button>
+          <button type="button" class="secondary hidden" id="cancel-edit">Cancel edit</button>
+        </div>
+      </form>
+      <p id="message" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="panel">
+      <div class="list-heading">
+        <div>
+          <h2>Student records</h2>
+          <p class="muted">Search by name or view all students.</p>
+        </div>
+        <input id="search" type="search" placeholder="Search name..." aria-label="Search students by name">
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>ID</th><th>Name</th><th>Email</th><th>Course</th><th>Actions</th></tr>
+          </thead>
+          <tbody id="students-body">
+            <tr><td colspan="5">Loading students...</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="footnote">Demo data is stored in memory and resets when you restart the server.</p>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
